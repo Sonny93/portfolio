@@ -44,7 +44,7 @@ export default function Navbar({ activeSection, sections }) {
 
             const { height } = target.getBoundingClientRect();
             if (dotRef.current) {
-                dotRef.current.style.transform = `translate(275px, ${index * height + 25}px)`;
+                dotRef.current.style.transform = `translate(285px, ${index * height + 25}px)`;
             }
 
             if (name !== activeSection.name) {
