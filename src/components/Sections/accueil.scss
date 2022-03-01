@@ -1,0 +1,81 @@
+.section > .accueil {
+    user-select: none;
+    position: relative;
+	height: 100%;
+	width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & > h1 {
+        font-size: 40px;
+        letter-spacing: 3px;
+    }
+
+    & > p {
+        font-style: oblique;
+        font-size: 19px;
+    }
+
+    & > .wrapper-scroll {
+		user-select: none;
+		cursor: pointer;
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		right: 50%;
+		width: fit-content;
+		transform: translate(-50%);
+
+		& > .scroll-icon {
+			display: inline-block;
+			height: 3em;
+			width: 1.5em;
+			border: 3px solid #fff;
+			border-radius: 1em;
+			transition: .15s;
+	
+			&:hover {
+				transform: scale(1.1)
+			}
+	
+			& > .scroll-icon__dot {
+				display: block;
+				position: absolute;
+				left: 50%;
+				background: #fff;
+				height: 0.5em;
+				width: 0.5em;
+				top: 0.6em;
+				margin-left: -0.25em;
+				border-radius: 50%;
+				transform-origin: top center;
+				backface-visibility: hidden;
+				animation: scroll_wheel 2s ease-out infinite;
+			}
+		}
+
+		& > p {
+			font-size: .8em;
+		}
+	}
+}
+
+@keyframes scroll_wheel {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(0.75em);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
