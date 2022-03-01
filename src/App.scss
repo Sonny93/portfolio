@@ -5,7 +5,8 @@
     width: 100%;
     text-align: center;
     color: $font-color;
-    background: url($bg-img);
+    background: url($bg-img) no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +26,7 @@
         height: 100%;
         width: 100%;
         flex: 1;
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(6px);
         overflow: auto;
         scroll-snap-type: y mandatory;
         & > .section {
@@ -95,7 +96,7 @@
             background: $main-color;
             border-radius: 50%;
             opacity: 1;
-            transform: translate(275px, 25px);
+            transform: translate(285px, 25px);
             transition: all 0.25s ease-in-out;
         }
 
@@ -109,7 +110,7 @@
 			display: inline-block;
             transition: 0.15s;
 
-            &:hover {
+            &.active, &:hover {
                 background: rgba(0, 0, 0, 0.25);
             }
 
@@ -134,10 +135,10 @@
     }
 
     & > .footer {
-        width: 100%;
-        font-size: 0.8em;
+        width: 250px;
+        font-size: 0.85em;
         font-style: italic;
-        padding: 15px 0;
+        padding: 20px 0;
         border-top: 1px solid $scnd-color;
     }
 }
