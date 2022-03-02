@@ -9,13 +9,13 @@
     flex-direction: column;
 
     & > h1 {
-        font-size: 40px;
+        font-size: 45px;
         letter-spacing: 3px;
     }
 
     & > p {
         font-style: oblique;
-        font-size: 19px;
+        font-size: 22px;
     }
 
     & > .wrapper-scroll {
@@ -26,6 +26,7 @@
 		left: 50%;
 		right: 50%;
 		width: fit-content;
+		text-align: center;
 		transform: translate(-50%);
 
 		& > .scroll-icon {

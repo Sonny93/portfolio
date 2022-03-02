@@ -1,0 +1,12 @@
+.section > .about-me {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+
+    & .about-me-wrapper {
+        margin: 50px;
+        padding: 50px;
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, .15);
+    }
+}

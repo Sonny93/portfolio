@@ -26,7 +26,7 @@ export default function SectionWrapper({
     );
 
     return (
-        <div className="section" ref={setRefs}>
+        <div className="section" ref={setRefs} id={section.name}>
             {component}
         </div>
     );

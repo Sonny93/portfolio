@@ -26,3 +26,19 @@ a {
 	height: 100%;
 	width: 100%;
 }
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+	background: $main-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba($color: $main-color, $alpha: 0.75);
+}

@@ -3,14 +3,14 @@ import { BsGithub, BsLinkedin, BsDiscord } from "react-icons/bs";
 
 export default function Navbar({ activeSection, sections }) {
     const dotRef = createRef();
-    const [items, setItems] = useState([
+    const [items] = useState([
         {
             name: "accueil",
             label: "Accueil",
         },
         {
             name: "aboutme",
-            label: "Qui suis-je ?",
+            label: "À propos",
         },
         {
             name: "btssio",
@@ -42,11 +42,17 @@ export default function Navbar({ activeSection, sections }) {
             const index = sections.findIndex((s) => s.name === name);
             if (index === -1) return;
 
+            // Update URL
+            const url = `${window.location.origin}/#${section.name}`;
+            window.history.pushState({}, "", url);
+
+            // Move dot
             const { height } = target.getBoundingClientRect();
             if (dotRef.current) {
                 dotRef.current.style.transform = `translate(285px, ${index * height + 25}px)`;
             }
 
+            // Scroll into view
             if (name !== activeSection.name) {
                 section.ref?.current?.scrollIntoView({
                     block: "start",

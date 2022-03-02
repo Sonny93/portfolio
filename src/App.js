@@ -9,12 +9,12 @@ import BTS from "./components/Sections/BTS";
 import Contact from "./components/Sections/Contact";
 import Parcours from "./components/Sections/Parcours";
 import Projets from "./components/Sections/Projets";
-import QuiSuisJe from "./components/Sections/QuiSuisJe";
+import APropos from "./components/Sections/APropos";
 import SectionWrapper from "./components/Sections/SectionWrapper";
 import VeilleTechnologique from "./components/Sections/Veilles";
 
 function App() {
-	const [sections, setSections] = useState([
+	const [sections] = useState([
 		{
 			name: "accueil",
 			component: <Accueil />,
@@ -22,7 +22,7 @@ function App() {
 		},
 		{
 			name: "aboutme",
-			component: <QuiSuisJe />,
+			component: <APropos />,
 			ref: createRef(),
 		},
 		{
