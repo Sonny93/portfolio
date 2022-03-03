@@ -4,166 +4,12 @@
     height: 100%;
     width: 100%;
     color: $font-color;
-    background: url($bg-img) no-repeat;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-
-    & > .navbar {
-        height: 100%;
-        width: 300px;
-        backdrop-filter: blur(20px);
-        background: rgba(0, 0, 0, 0.15);
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    & > .page-content {
-        height: 100%;
-        width: 100%;
-        flex: 1;
-        backdrop-filter: blur(6px);
-        overflow: auto;
-        scroll-snap-type: y mandatory;
-
-        & > .section {
-            min-height: 100%;
-            height: 100%;
-            width: 1100px;
-            scroll-snap-align: center;
-        }
-    }
-}
-
-.navbar {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-
-    & > .header {
-        height: fit-content;
-        width: 100%;
-
-        & > p {
-            font-size: 0.9em;
-            font-style: italic;
-            margin: 5px 0;
-        }
-
-        & > .find-me {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            & > .item:not(:last-child) {
-                margin-right: 10px;
-            }
-
-            & > .item a {
-                user-select: none;
-                cursor: pointer;
-                border-radius: 50%;
-                padding: 7px;
-                background: transparent;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                transition: 0.15s;
-
-                &:hover {
-                    color: rgba(0, 0, 0, 0.6);
-                    background: $main-color;
-                }
-            }
-        }
-    }
-
-    & > .items {
-        height: fit-content;
-        width: 100%;
-        list-style: none;
-        padding: 0;
-        flex: 1;
-
-        & > .dot {
-            height: 6px;
-            width: 6px;
-            background: $main-color;
-            border-radius: 50%;
-            opacity: 1;
-            transform: translate(285px, 25px);
-            transition: all 0.25s ease-in-out;
-        }
-
-        & > .item {
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-            height: fit-content;
-            width: 250px;
-            padding: 10px 0;
-            display: inline-block;
-            transition: 0.15s;
-
-            &.active,
-            &:hover {
-                background: rgba(0, 0, 0, 0.25);
-            }
-
-            &:after {
-                content: "";
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 2px;
-                bottom: 0;
-                left: 0;
-                background-color: #0087ca;
-                transform-origin: bottom right;
-                transition: transform 0.25s ease-out;
-            }
-
-            &.active:after {
-                transform: scaleX(1);
-                transform-origin: bottom left;
-            }
-        }
-    }
-
-    & > .footer {
-        width: 250px;
-        font-size: 0.85em;
-        font-style: italic;
-        padding: 20px 0;
-        border-top: 1px solid $scnd-color;
-    }
-}
-
-/* FadeIn Animation */
-.navbar {
-    animation: 0.75s fadeInLeft both;
-}
-.page-content {
+    backdrop-filter: blur(6px);
     animation: 0.75s fadeInTop both;
-}
-
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translate(-100px, 0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
 }
 
 @keyframes fadeInTop {
@@ -173,7 +19,7 @@
     }
 
     100% {
-        opacity: 1;
+        opacity: initial;
         transform: translate(0, 0);
     }
 }

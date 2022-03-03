@@ -1,6 +1,10 @@
 import { createRef, useState } from "react";
 import { BsGithub, BsLinkedin, BsDiscord } from "react-icons/bs";
 
+import { name } from '../../config';
+
+import './navbar.scss';
+
 export default function Navbar({ activeSection, sections }) {
     const dotRef = createRef();
     const [items] = useState([
@@ -65,7 +69,7 @@ export default function Navbar({ activeSection, sections }) {
     return (
         <div className="navbar">
             <div className="header">
-                <h2>Sonny LALLIER</h2>
+                <h2>{name}</h2>
                 <p>Où me retrouver ?</p>
                 <ul className="find-me">
                     <li className="item">
@@ -114,7 +118,7 @@ export default function Navbar({ activeSection, sections }) {
                 ))}
             </ul>
             <div className="footer">
-                Copyright 2022 © <b>Sonny LALLIER</b>
+                Copyright 2022 © <b>{name}</b>
             </div>
         </div>
     );
