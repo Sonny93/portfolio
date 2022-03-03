@@ -1,17 +1,18 @@
 import { createRef, useState } from "react";
 import "./App.scss";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 // Sections
-import Accueil from "./components/Sections/Accueil";
-import BTS from "./components/Sections/BTS";
-import Contact from "./components/Sections/Contact";
-import Parcours from "./components/Sections/Parcours";
-import Projets from "./components/Sections/Projets";
-import APropos from "./components/Sections/APropos";
-import SectionWrapper from "./components/Sections/SectionWrapper";
-import VeilleTechnologique from "./components/Sections/Veilles";
+import Sections from "./components/Sections/Sections";
+
+import Accueil from "./components/Sections/Accueil/Accueil";
+import APropos from "./components/Sections/APropos/APropos";
+import BTS from "./components/Sections/BTS/BTS";
+import Parcours from "./components/Sections/Parcours/Parcours";
+import Projets from "./components/Sections/Projets/Projets";
+import VeilleTechnologique from "./components/Sections/VeilleTechno/Veilles";
+import Contact from "./components/Sections/Contact/Contact";
 
 function App() {
 	const [sections] = useState([
@@ -55,17 +56,15 @@ function App() {
 
 	return (
 		<div className="App">
-			<Navbar activeSection={activeSection} sections={sections} />
-			<div className="page-content">
-				{sections.map((section, key) => (
-					<SectionWrapper
-						key={key}
-						section={section}
-						activeSection={activeSection}
-						setActiveSection={setActiveSection}
-					/>
-				))}
-			</div>
+			<Navbar
+				activeSection={activeSection}
+				sections={sections}
+			/>
+			<Sections
+				sections={sections}
+				activeSection={activeSection}
+				setActiveSection={setActiveSection}
+			/>
 		</div>
 	);
 }

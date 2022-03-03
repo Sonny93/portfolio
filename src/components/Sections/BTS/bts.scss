@@ -1,0 +1,11 @@
+.section > .btssio {
+    & .wrapper-options {
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+
+        & > .option {
+            width: calc(50% - 10px);
+        }
+    }
+}

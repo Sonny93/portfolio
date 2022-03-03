@@ -1,9 +1,11 @@
+import { name } from '../../../config';
+
 import "./accueil.scss";
 
 export default function Accueil({ scrollToNextSection }) {
     return (
         <div className="accueil">
-            <h1>Sonny LALLIER</h1>
+            <h1>{name}</h1>
             <p>Benvenue sur mon Portfolio !</p>
             <div className="wrapper-scroll" onClick={scrollToNextSection}>
                 <span className="scroll-icon">
