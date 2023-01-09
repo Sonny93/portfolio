@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
 
-import { Section } from "../../../types";
 import { name, SectionsProvider } from "../../../config";
+import { Section } from "../../../types";
 
 import Avatar from "../../Avatar";
 
@@ -50,13 +49,9 @@ function Accueil({ sections }: AccueilProps): JSX.Element {
             </p>
             {nextSection && (
                 <div className="wrapper-scroll">
-                    <Link
-                        smooth
-                        to={nextSection.name}
-                        containerId="page-content"
-                    >
+                    <a href={`/#${nextSection.name}`}>
                         <ScrollMouse />
-                    </Link>
+                    </a>
                     <p>Défiler pour voir la suite !</p>
                 </div>
             )}

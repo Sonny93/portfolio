@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, createRef } from "react";
 import { BsDiscord, BsGithub, BsLinkedin } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
 
@@ -90,6 +90,8 @@ export const sections: Section[] = [
         background: "me-contacter-bg.webp",
         component: Contact,
     },
-].filter((section) => !section?.disabled);
+]
+    .map((section) => ({ ...section, ref: createRef<HTMLDivElement>() }))
+    .filter((section) => !section?.disabled);
 
 export const SectionsProvider = createContext(sections);

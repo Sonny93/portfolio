@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: column;
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .page-content > .section {

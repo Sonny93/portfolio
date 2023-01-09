@@ -109,7 +109,7 @@ export default function APropos() {
 
 function BuildItem({ label, icon }: Langage) {
     return (
-        <LangageItem>
+        <LangageItem key={Math.random()}>
             {icon}
             {label}
         </LangageItem>
@@ -118,8 +118,10 @@ function BuildItem({ label, icon }: Langage) {
 
 function LangageItem({ children }: { children: ReactNode }) {
     return (
-        <Tilt tiltReverse perspective={500}>
-            <li>{children}</li>
-        </Tilt>
+        <li className="langage-item">
+            <Tilt tiltReverse perspective={500}>
+                <div className="content">{children}</div>
+            </Tilt>
+        </li>
     );
 }

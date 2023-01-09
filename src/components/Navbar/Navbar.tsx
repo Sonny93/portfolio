@@ -1,11 +1,11 @@
 import React, { MouseEvent, useEffect, useState } from "react";
-import { Link } from "react-scroll";
 import { AiOutlineMenu } from "react-icons/ai";
 
-import { name, socialNetworks } from "../../config";
-
-import { Section, SocialNetwork } from "../../types";
 import Avatar from "../Avatar";
+
+import { name, socialNetworks } from "../../config";
+import { Section, SocialNetwork } from "../../types";
+
 import "./navbar.scss";
 
 export interface NavbarProps {
@@ -88,18 +88,9 @@ function NavbarSectionItem({
     const { name, label } = section;
     return (
         <li>
-            <Link
-                className="navbar-item"
-                activeClass="active"
-                smooth
-                spy
-                to={name}
-                containerId="page-content"
-                onSetActive={setActiveSection}
-                offset={-(window.innerHeight / 2.75)}
-            >
+            <a href={`/#${name}`} className="navbar-item">
                 {label}
-            </Link>
+            </a>
         </li>
     );
 }

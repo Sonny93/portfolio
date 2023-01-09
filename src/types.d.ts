@@ -1,9 +1,12 @@
+import { RefObject } from "react";
+
 export interface Section {
     name: string;
     label: string;
     background: string;
     component: any;
     disabled?: boolean;
+    ref: RefObject<HTMLDivElement>;
 }
 
 export interface SocialNetwork {
