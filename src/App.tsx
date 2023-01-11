@@ -47,7 +47,11 @@ export default function App() {
                         setActiveSection={changeActiveSection}
                         sections={sections}
                     />
-                    <SectionsList sections={sections} />
+                    <SectionsList
+                        sections={sections}
+                        activeSection={activeSection}
+                        setActiveSection={changeActiveSection}
+                    />
                 </SectionsProvider.Provider>
             </div>
         </div>
